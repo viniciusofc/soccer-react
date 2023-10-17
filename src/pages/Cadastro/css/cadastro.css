@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #023047;
+    /* background-image: url("../../assets/estadio.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+
+.page_register {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #121214;
+}
+
+.block_register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    padding: 40px;
+    gap: 5px;
+    width: 420px;
+    height: 400px;
+}
+
+.block_register h1 {
+    color: #ffffff;
+    text-align: start;
+    font-size: 2.3em;
+}
+
+
+.block_register p {
+    color: #58e8a5;
+    text-align: start;
+    font-size: 1.0 em;
+}
+
+.block_register img {
+    width: 250px;
+}
+
+.formRegister {
+    display: flex;
+    flex-direction: column;
+    background-color: #202024;
+    border-radius: 7px;
+    padding: 30px;
+    width: 600px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px
+}
+
+
+.formRegister h1 {
+    padding: 0;
+    margin: 0;
+    color:  #fff;
+    font-weight: 500;
+    font-size: 2.3em;
+}
+
+.formRegister p {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.formRegister input {
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+
+.formRegister input:focus {
+    border: 1px solid #03F384;
+}
+
+.formRegister label {
+    color:  #56e4a2;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.formRegister a {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #fff;
+    transition: all linear 160ms;
+}
+
+.formRegister a:hover {
+    color: #56e4a2;
+}
+
+.btn_register {
+    background-color: #03F384;
+    color: #181818;
+    font-size: 14px;
+    font-weight: 600;
+    height: 45px;
+    border: none !important;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+
+}
+
+.btn_register:hover {
+    transform: scale(1.02);
+    height: 45px;
+    background-color: #03F384;
+
+}
+
+.register{
+    text-align: center;
+}
+
+
+.pass_register {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pass_register_block {
+    width:  280px;
+    display: flex;
+    flex-direction: column;
+}

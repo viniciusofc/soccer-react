@@ -1,0 +1,26 @@
+.container_home {
+    margin-left: 270px;
+    margin-right: 6px;
+    overflow: hidden;
+    transition: margin 0.4s;
+}
+
+.container_home h1 {
+    color: #03F384;
+    
+}
+
+@media (width < 920px) {
+    .container_home {
+        margin-left: 78px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+    .container_home {
+        margin-left: 6px;
+    }
+
+} 

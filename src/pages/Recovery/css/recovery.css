@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #023047;
+    /* background-image: url("../../assets/estadio.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+
+.page_recovery {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #121214;
+}
+
+.block_recovery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    padding: 40px;
+    gap: 5px;
+    width: 420px;
+}
+
+.formrecovery div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formrecovery img {
+    align-items: center;
+    width: 150px;
+}
+
+.block_recovery h1 {
+    color: #f3f3f3;
+    text-align: center;
+    font-size: 2.0em;
+}
+
+.formrecovery {
+    display: flex;
+    flex-direction: column;
+    background-color: #202024;
+    border-radius: 7px;
+    padding: 60px;
+    width: 450px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px
+}
+
+.arearecovery img {
+    width: 420px;
+}
+
+.formrecovery h1 {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 2.3em;
+}
+
+.formrecovery p {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.formrecovery input {
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+
+.formrecovery input:focus {
+    border: 1px solid #03F384;
+}
+
+.formrecovery label {
+    color: #56e4a2;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.formrecovery a {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #fff;
+    transition: all linear 160ms;
+}
+
+.formrecovery a:hover {
+    color: #56e4a2;
+}
+
+.btn_recovery {
+    background-color: #03F384;
+    color: #181818;
+    font-size: 14px;
+    font-weight: 600;
+    border: none !important;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+
+}
+
+.btn_recovery:hover {
+    transform: scale(1.05);
+    background-color: #03F384;
+
+}
+
+.register_recovery {
+    text-align: center;
+}

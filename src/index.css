@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  height: 110vh;
+  font-family: sans-serif;
+  background-color: #121214;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
