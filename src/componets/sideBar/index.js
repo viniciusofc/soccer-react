@@ -1,6 +1,3 @@
-import { AiOutlineHome } from 'react-icons/ai';
-import { GrConfigure } from 'react-icons/gr';
-import { MdOutlineContactSupport } from 'react-icons/md';
 import './styles.css'
 import perfil from '../../assets/perfil.jpg'
 

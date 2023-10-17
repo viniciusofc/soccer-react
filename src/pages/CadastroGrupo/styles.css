@@ -1,0 +1,84 @@
+.container-cad-grupo {
+    margin-left: 250px;
+    margin-right: 6px;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: margin 0.4s;
+}
+
+.header-grupo {
+    width: 95%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #202024;
+}
+
+.section-cad-grupo {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #202024;
+    border-color: #03F384;
+    border-bottom-width: 0.5px;
+    border-bottom-style: solid;
+}
+
+.section-cad-grupo h4 {
+    font-size: 14px;
+    font-weight: normal;
+    color: rgb(115, 115, 128);
+    margin-bottom: 2px;
+}
+
+.container-form-grupo {
+    padding: 0px;
+    margin-left: 6px;
+    width: 97%;
+}
+
+.div-cad-grupo {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.div-cad-grupo input {
+    width: 340px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #343437;
+    border: 1px solid #ccc;
+    color: #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+
+.div-cad-grupo input:focus {
+    border: 1px solid #03F384;
+}
+
+
+@media (width < 920px) {
+    .container-cad-grupo {
+        margin-left: 78px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-cad-grupo {
+        margin-left: 6px;
+    }
+}

@@ -1,0 +1,28 @@
+
+
+.section-modal-grupo {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.section-modal-grupo div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 7px;
+    margin-top: 30px;
+    padding: 8px;
+}
+
+.section-modal-grupo div > span {
+   font-size: 18px;
+   font-weight: 600;
+}

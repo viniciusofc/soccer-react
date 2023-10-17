@@ -3,6 +3,7 @@ import '../Perfil/styles.css'
 import { useEffect, useState } from 'react'
 import perfil from '../../assets/perfil.jpg'
 import toggle from '../../Functions/toggle.js'
+import Header from '../../componets/Header/index.js'
 
 const Perfil = () => {
     const [loading, setLoading] = useState(true)
@@ -18,9 +19,7 @@ const Perfil = () => {
     return (
         <>
             <div className="container_perfil">
-                <section className='header'>
-                    <h2>Meu Perfil</h2>
-                </section>
+                <Header title={'Meu Perfil'} />
                 {
                     loading && <Loading />
                 }

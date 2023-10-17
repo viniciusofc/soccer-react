@@ -1,3 +1,4 @@
+import Header from '../../componets/Header/index.js'
 import Loading from '../../componets/Loading/index.js'
 import '../Config/styles.css'
 import { useEffect, useState } from 'react'
@@ -14,11 +15,12 @@ const Config = () => {
     return (
         <>
             <div className="container_home">
+                <Header title={'Configurar'} />
                 {
                     loading && <Loading />
                 }
-                 <section className='header'>
-                    <h2>Configurar</h2>
+                <section className='header'>
+
                 </section>
             </div>
         </>

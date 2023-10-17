@@ -2,6 +2,7 @@ import Loading from '../../componets/Loading/index.js'
 import '../Suporte/styles.css'
 import { useEffect, useState } from 'react'
 import suportEmail from '../../assets/supportEmail.svg'
+import Header from '../../componets/Header/index.js'
 
 const Suporte = () => {
     const [loading, setLoading] = useState(true)
@@ -15,12 +16,11 @@ const Suporte = () => {
     return (
         <>
             <div className="container_home">
+                <Header title={'Suporte'} />
                 {
                     loading && <Loading />
                 }
-                <section className='header'>
-                    <h2>Suporte</h2>
-                </section>
+
                 <section className='section-img'>
                     <img src={suportEmail}></img>
                     <div className='container-support'>
