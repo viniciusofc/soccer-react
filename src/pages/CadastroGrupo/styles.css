@@ -9,6 +9,26 @@
     transition: margin 0.4s;
 }
 
+.container-cad-grupo p{
+    color: #33d489;
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.container-cad-grupo button{
+    margin: 30px;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: #03F384;
+    color: #202024;
+    font-size: 14px;
+    font-weight: 600;
+   
+}
+
 .header-grupo {
     width: 95%;
     margin-top: 30px;
@@ -21,12 +41,15 @@
 .section-cad-grupo {
     width: 95%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
     align-items: flex-start;
     background-color: #202024;
     border-color: #03F384;
     border-bottom-width: 0.5px;
     border-bottom-style: solid;
+    box-sizing: border-box;
 }
 
 .section-cad-grupo h4 {
@@ -36,13 +59,13 @@
     margin-bottom: 2px;
 }
 
-.container-form-grupo {
+.section-cad-grupo>div {
     padding: 0px;
     margin-left: 6px;
-    width: 97%;
 }
 
 .div-cad-grupo {
+    width: 330px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -52,33 +75,70 @@
 }
 
 .div-cad-grupo input {
-    width: 340px;
+    width: 320px;
     padding: 10px;
     font-size: 14px;
     background-color: #343437;
     border: 1px solid #ccc;
     color: #ccc;
-    margin-bottom: 20px;
     margin-top: 5px;
     border-radius: 4px;
     transition: all linear 160ms;
     outline: none;
 }
 
-
 .div-cad-grupo input:focus {
     border: 1px solid #03F384;
 }
 
+.div-cad-grupo select:focus {
+    border: 1px solid #03F384;
+}
+
+
+.div-button > button{
+    display: flex;
+    cursor: pointer;
+    width: 140px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 
 @media (width < 920px) {
     .container-cad-grupo {
         margin-left: 78px;
     }
+
+    .section-cad-grupo {
+        flex-direction: column;
+    }
+
+    .div-cad-grupo input {
+        width: 100%;
+    }
+    .container-cad-grupo p{
+        font-size: 18px;
+    }
+
 }
 
 @media (max-width: 480px) {
     .container-cad-grupo {
         margin-left: 6px;
+        flex-direction: column;
+    }
+    
+    .section-cad-grupo {
+        flex-direction: column;
+    }
+    .div-cad-grupo input {
+        width: 320px;
+    }
+    .div-cad-grupo input {
+        width: 100%;
+    }
+    .container-cad-grupo p{
+        font-size: 18px;
     }
 }

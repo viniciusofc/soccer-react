@@ -1,0 +1,32 @@
+select {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #343437;
+    border: 1px solid #ccc;
+    color: #ccc;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+select option {
+    font-size: 18px;
+}
+
+@media (width < 920px) {
+    select {
+       flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-cad-grupo {
+        margin-left: 6px;
+        flex-direction: column;
+    }
+}
