@@ -15,6 +15,14 @@ const CadastroGrupo = () => {
         }, 1500);
     }, [])
 
+    const cpfMask = value => {
+        return value
+          .replace(/\D/g, '') // substitui qualquer caracter que nao seja numero por nada
+          .replace(/(\d{2})(\d)/, '$1:$2') // captura 2 grupos de numero o primeiro de 3 e o segundo de 1, apos capturar o primeiro grupo ele adiciona um ponto antes do segundo grupo de numero
+          .replace(/(\d{2})(\d)/, '$1:$2')
+     
+      }
+
     return (
         <>
             <div className="container-cad-grupo">
@@ -60,7 +68,28 @@ const CadastroGrupo = () => {
                     <div>
                         <h4>Hora:</h4>
                         <div className='div-cad-grupo'>
-                            <input type="text" placeholder='Digite aqui...'/>
+                            <input type="text" maxLength={5} value={cpfMask(tipoCampo)} onChange={(e) => setTipoCampo(cpfMask(e.target.value))} placeholder='Digite aqui...'/>
+                        </div>
+                    </div>
+                </section>
+
+                <section className='header-grupo'>
+                    <div className='container-header'>
+                        <h2>Endereço:</h2>
+                    </div>
+                </section>
+
+                <section className='section-cad-grupo' id='section-address'>
+                    <div>
+                        <h4>Dia da semana:</h4>
+                        <div className='div-cad-grupo'>
+                            <SelectDias handle={(e) => setTipoCampo(e)} />
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Hora:</h4>
+                        <div className='div-cad-grupo'>
+                            <input type="text" maxLength={5} value={cpfMask(tipoCampo)} onChange={(e) => setTipoCampo(cpfMask(e.target.value))} placeholder='Digite aqui...'/>
                         </div>
                     </div>
                 </section>

@@ -5,20 +5,13 @@ export const SelectDias = ({ handle }) => {
         {
             id: 0,
             value: 'Selecione um dia...'
-        }, {
+        }, 
+        {
             id: 1,
-            value: 'Sábado'
-        },
-        {
-            id: 2,
-            value: 'Domingo'
-        },
-        {
-            id: 3,
             value: 'Segunda-Feira'
         },
         {
-            id: 3,
+            id: 2,
             value: 'Terça-Feira'
         },
         {
@@ -26,13 +19,21 @@ export const SelectDias = ({ handle }) => {
             value: 'Quarta-Feira'
         },
         {
-            id: 3,
+            id: 4,
             value: 'Quinta-Feira'
         },
         {
-            id: 3,
+            id: 5,
             value: 'Sexta-Feira'
-        }]
+        },
+        {
+            id: 6,
+            value: 'Sábado'
+        },
+        {
+            id: 7,
+            value: 'Domingo'
+        },]
 
 
     return (
