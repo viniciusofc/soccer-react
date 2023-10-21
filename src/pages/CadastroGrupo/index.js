@@ -1,13 +1,43 @@
 import { useEffect, useState } from 'react'
 import Loading from '../../componets/Loading'
 import './styles.css'
-import Header from '../../componets/Header/index.js'
-import { SelectCampo } from '../../componets/Select/SelectCampo'
-import { SelectDias } from '../../componets/Select/SelectDias'
+
+import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
+import { FiSend } from 'react-icons/fi';
+
+import UseForm from '../../componets/Form/UseForm/UseForm'
+import ReviewForm from '../../componets/Form/UseForm/ReviewForm'
+import Thanks from '../../componets/Form/UseForm/Thanks'
+
+import { useForm } from '../../hooks/useForm';
+
+import Steps from '../../componets/Steps'
+import Header from '../../componets/Header';
+
+const formData = {
+    name: '',
+    tipo: '',
+    dia: '',
+    horaInicial: '',
+    horaFinal: ''
+
+}
 
 const CadastroGrupo = () => {
-    const [loading, setLoading] = useState(true)
-    const [tipoCampo, setTipoCampo] = useState("");
+    const [loading, setLoading] = useState(true);
+    const [data, setData] = useState(formData);
+
+    const updateFielHandler = (key, value) => {
+        setData((prev) => {
+            return { ...prev, [key]: value }
+        })
+    }
+
+    const formComponents = [
+        <UseForm data={data} updateFielHandler={updateFielHandler} />, <ReviewForm data={data} updateFielHandler={updateFielHandler} />, <Thanks data={data} />
+    ]
+
+    const { currentStep, currentComponent, changeStep, isLastStep, isFirstStep } = useForm(formComponents);
 
     useEffect(() => {
         setTimeout(() => {
@@ -15,94 +45,54 @@ const CadastroGrupo = () => {
         }, 1500);
     }, [])
 
-    const cpfMask = value => {
-        return value
-          .replace(/\D/g, '') // substitui qualquer caracter que nao seja numero por nada
-          .replace(/(\d{2})(\d)/, '$1:$2') // captura 2 grupos de numero o primeiro de 3 e o segundo de 1, apos capturar o primeiro grupo ele adiciona um ponto antes do segundo grupo de numero
-          .replace(/(\d{2})(\d)/, '$1:$2')
-     
-      }
+    function handleRegister() {
+        if (!(data.tipo)) {
+            alert('Dados incompletos!')
+        }
+    }
 
     return (
         <>
-            <div className="container-cad-grupo">
-                <Header title={'Cadastro Grupo'} />
-                {
-                    loading && <Loading />
-                }
-                <p>Preencha todos os campos abaixo:</p>
-                <section className='header-grupo'>
-                    <div className='container-header'>
-                        <h2>Nome Grupo / Tipo Campo:</h2>
-                    </div>
-                </section>
+            <Header title={'Meu Perfil'} />
+            {
+                loading && <Loading />
+            }
+            <div className='container_cad-group'>
 
-                <section className='section-cad-grupo' id='section-address'>
-                    <div>
-                        <h4>Nome do seu Grupo</h4>
-                        <div className='div-cad-grupo'>
-                            <input placeholder='Digite aqui...' />
-                        </div>
-                    </div>
-                    <div>
-                        <h4>Tipo de campo</h4>
-                        <div className='div-cad-grupo'>
-                            <SelectCampo tipo={`campos`} handle={(e) => setTipoCampo(e)} />
-                        </div>
-                    </div>
-                </section>
-
-                <section className='header-grupo'>
-                    <div className='container-header'>
-                        <h2>Dia da semana / Hora:</h2>
-                    </div>
-                </section>
-
-                <section className='section-cad-grupo' id='section-address'>
-                    <div>
-                        <h4>Dia da semana:</h4>
-                        <div className='div-cad-grupo'>
-                            <SelectDias handle={(e) => setTipoCampo(e)} />
-                        </div>
-                    </div>
-                    <div>
-                        <h4>Hora:</h4>
-                        <div className='div-cad-grupo'>
-                            <input type="text" maxLength={5} value={cpfMask(tipoCampo)} onChange={(e) => setTipoCampo(cpfMask(e.target.value))} placeholder='Digite aqui...'/>
-                        </div>
-                    </div>
-                </section>
-
-                <section className='header-grupo'>
-                    <div className='container-header'>
-                        <h2>Endereço:</h2>
-                    </div>
-                </section>
-
-                <section className='section-cad-grupo' id='section-address'>
-                    <div>
-                        <h4>Dia da semana:</h4>
-                        <div className='div-cad-grupo'>
-                            <SelectDias handle={(e) => setTipoCampo(e)} />
-                        </div>
-                    </div>
-                    <div>
-                        <h4>Hora:</h4>
-                        <div className='div-cad-grupo'>
-                            <input type="text" maxLength={5} value={cpfMask(tipoCampo)} onChange={(e) => setTipoCampo(cpfMask(e.target.value))} placeholder='Digite aqui...'/>
-                        </div>
-                    </div>
-                </section>
-                <div className='div-button'>
-                    <button>
-                        <span>Criar Grupo</span>
-                        <i className="material-symbols-outlined">
-                            add_circle
-                        </i>
-                    </button>
-
+                <div className='header-cad-group'>
+                    <h2>Crie seu Grupo </h2>
+                    <p>Após seguir todos os passos, seu grupo estará formado!</p>
                 </div>
+                <section>
+                    <div className='form-container-cad-group'>
+                        <Steps currentStep={currentStep} />
+                        <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
+                            <div className='inputs-container-cad-group'>
+                                {currentComponent}
+                            </div>
+                            <div className='actions'>
+                                {
+                                    !isFirstStep &&
+                                    (<button type='button' onClick={() => changeStep(currentStep - 1)}>
+                                        <GrFormPrevious />
+                                        <span>Voltar</span>
+                                    </button>)
+                                }
 
+                                {!isLastStep ? (
+                                    <button type='submit'>
+                                        <span>Avançar</span>
+                                        <GrFormNext />
+                                    </button>
+                                ) : (<button type='button' onClick={() => handleRegister()}>
+                                    <span>Enviar</span>
+                                    <FiSend />
+                                </button>
+                                )}
+                            </div>
+                        </form>
+                    </div>
+                </section>
             </div>
         </>
     )
